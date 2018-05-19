@@ -1,4 +1,10 @@
 ---
+- name: Install dependencies
+  become: true
+  pip:
+    executable: pip
+    name: pycrypto
+
 - name: Clone creddump
   become: true
   git:
