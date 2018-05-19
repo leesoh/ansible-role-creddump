@@ -14,10 +14,10 @@ script:
     - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
     - ansible-playbook -i tests/inventory tests/test.yml --connection=local
     # These fail on Crypto.Hash import. Not sure why as it's installed.
-    - cd /opt/creddump
-    - /opt/creddump/cachedump.py
-    - /opt/creddump/lsadump.py
-    - /opt/creddump/pwdump.py
+    - cd /opt/creddump7
+    - python cachedump.py
+    - python lsadump.py
+    - python pwdump.py
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
