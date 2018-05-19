@@ -1,0 +1,17 @@
+galaxy_info:
+  author: liam somerville
+  description: Installs creddump
+  license: BSD3-Clause
+  min_ansible_version: 1.2
+  - name: Ubuntu
+    versions:
+    - bionic
+    - artful
+    - zesty
+    - xenial
+
+  galaxy_tags:
+    - pentest
+
+dependencies:
+  - leesoh.git
