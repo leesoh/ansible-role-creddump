@@ -1,25 +1,7 @@
 ---
-- name: Install dependencies
-  become: true
-  pip:
-    executable: pip
-    name: pycrypto
-
 - name: Clone creddump
   become: true
   git:
     repo: https://github.com/Neohapsis/creddump7.git
     dest: "{{ creddump_git_location }}/creddump7"
     update: yes
-
-- name: Create symlinks
-  become: true
-  file:
-    state: link
-    src: "{{ creddump_git_location }}/creddump7/{{ item }}.py"
-    path: "/usr/bin/{{ item }}"
-
-  with_items:
-    - cachedump
-    - lsadump
-    - pwdump
